@@ -7,7 +7,7 @@ sourcePath=""
 targetPath=""
 
 #获取原始路径下符合条件的路径
-def getMatchDirList(self):
+def getMatchDirList():
     # 1 获得原始路径下的全部文件夹集合
     list_sourcepaht_dir= os.listdir(sourcePath)
     # 2 筛选list，使用正则表达式匹配中文开头的文件夹
