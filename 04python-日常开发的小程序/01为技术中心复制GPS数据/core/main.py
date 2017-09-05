@@ -1,7 +1,9 @@
 #!_*_coding:utf-8_*_
 #from core import dirOperate
 import dirOperate as do
-import logger as lg
+import loghelper as lg
+import conf.settings as st
+# from conf import settings as st
 
 def interactive():
     '''
@@ -16,7 +18,7 @@ def interactive():
     6.  退出
     \033[0m
     '''
-    sourcePath="E:\开发\01为单位开发的项目\other\04python-日常开发的小程序\01为技术中心复制GPS数据\test"
+    sourcePath=st.SOURCE_DIR
     menu_dic={
         "1":getExistGPSDirList
     }
@@ -39,8 +41,8 @@ def getExistGPSDirList(sourcePath):
     :return:
     '''
     # 获取符合条件的集合
-    list_dir=do.getMatchDirList()
-    logger= lg.logger('existDirLog')
+    list_dir=do.getMatchDirList(sourcePath)
+    loghelper= lg.logger('existDirLog')
     # 写入日志文件中
     for temp in list_dir:
         logger.info(temp)
