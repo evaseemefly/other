@@ -15,6 +15,7 @@ def getMatchDirList(sourcePath):
     list_dirmatch=filter(isStationNameRex,list_sourcepaht_dir)
 
     list_fulldirfinal=[]
+    list_dirmatch_finial=[]
     # 3 获取最终的文件夹集合
     # 判断该文件夹下是否存在GPS子文件夹
     # os.path.join(sourcePath,)
@@ -23,7 +24,8 @@ def getMatchDirList(sourcePath):
         # 若原始文件夹中存在GPS子文件夹则记录在新创建的list中
         if isExistGPSDir(sourceFullDir_temp):
             list_fulldirfinal.append(sourceFullDir_temp)
-    return list_fulldirfinal
+            list_dirmatch_finial.append(dir)
+    return list_fulldirfinal,list_dirmatch_finial
 
 def isExistGPSDir(obj):
     return os.path.exists(obj)

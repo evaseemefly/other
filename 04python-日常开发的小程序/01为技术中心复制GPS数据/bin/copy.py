@@ -1,0 +1,12 @@
+import os,sys
+base_dir=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+print(base_dir)
+sys.path.append(base_dir)
+
+from core import main
+from core import loggingconsole
+# import core.loggingconsole
+
+if __name__=="__main__":
+    main.run()
+    # loggingconsole.do()
